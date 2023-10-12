@@ -9,12 +9,8 @@ from EmikoRobot.utils.logger import log
 DEFAULTS = {
     "LOAD_MODULES": True,
     "DEBUG_MODE": True,
-    "REDIS_HOST": "localhost",
-    "REDIS_PORT": 6379,
-    "REDIS_DB_FSM": 1,
     "MONGODB_URI": "localhost",
     "MONGO_DB": "DaisyX",
-    "API_PORT": 8080,
     "JOIN_CONFIRM_DURATION": "30m",
 }
 
