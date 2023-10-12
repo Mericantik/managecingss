@@ -32,7 +32,7 @@ class AntiSpam:
         self.sec_limit = Rate(6, Duration.CUSTOM)  # 6 / Per 15 Seconds
         self.min_limit = Rate(20, Duration.MINUTE)  # 20 / Per minute
         self.hour_limit = Rate(100, Duration.HOUR)  # 100 / Per hour
-        self.daily_limit = tRate(1000, Duration.DAY)  # 1000 / Per day
+        self.daily_limit = Rate(1000, Duration.DAY)  # 1000 / Per day
         self.limiter = Limiter(
             self.sec_limit,
             self.min_limit,
