@@ -32,4 +32,4 @@ logger.add(
     diagnose=True,
     level="INFO",
 )
-log.info("Enabled logging intro amelia.log file.")
+log.info("Enabled logging intro EmikoRobot.log file.")
