@@ -22,9 +22,13 @@ from ptbcontrib.postgres_persistence import PostgresPersistence
 
 StartTime = time.time()
 
-def get_user_list(__init__, key):
-    with open("{f'Logs}/EmikoRobot/{log}".format(os.getcwd(), __init__), "r") as json_file:
-        return json.load(json_file)[key]
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
+    level=logging.INFO,
+)
+
+LOGGER = logging.getLogger(__name__)
 
 # enable logging
 FORMAT = "[EmikoRobot] %(message)s"
