@@ -29,9 +29,16 @@ class AntiSpam:
         )
         # Values are HIGHLY experimental, its recommended you pay attention to our commits as we will be adjusting the values over time with what suits best.
         Duration.CUSTOM = 15  # Custom duration, 15 seconds
-        self.sec_limit = Rate(6, Duration.CUSTOM)  # 6 / Per 15 Seco self.limiter = Limiter(
+        rate = Rate(5, Duration.SECOND * 2)
+       limiter = Limiter(rate)  # 6 / Per 15 Seco self.limiter = Limiter(
             self.sec_limit,
-            bucket=InMemoryBucket,
+            for request in range(6):
+    try:
+        limiter.try_acquire(request)
+    except BucketFullException as err:
+        print(err)
+        print(err.meta_info)
+        bucket=InMemoryBucket,
         )
 
     def check_user(self, user):
