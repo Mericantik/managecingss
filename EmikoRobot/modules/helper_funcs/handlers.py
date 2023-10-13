@@ -29,8 +29,8 @@ class AntiSpam:
         )
         # Values are HIGHLY experimental, its recommended you pay attention to our commits as we will be adjusting the values over time with what suits best.
         Duration.CUSTOM = 15  # Custom duration, 15 seconds
-        rate = Rate(5, Duration.SECOND * 2)
-       limiter = Limiter(rate)  # 6 / Per 15 Seco self.limiter = Limiter(
+        rates = Rate(5, Duration.SECOND * 2)
+       limiter = Limiter(rates)  
             self.sec_limit,
             for request in range(6):
     try:
