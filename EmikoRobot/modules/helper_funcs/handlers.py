@@ -30,7 +30,7 @@ class AntiSpam:
         # Values are HIGHLY experimental, its recommended you pay attention to our commits as we will be adjusting the values over time with what suits best.
         Duration.CUSTOM = 15  # Custom duration, 15 seconds
         rates = Rate(5, Duration.SECOND * 2)
-              self.sec_limit,
+            
             for request in range(6):
     try:
         limiter.try_acquire(request)
