@@ -3,7 +3,6 @@
 import emoji
 import re
 import aiohttp
-from googletrans import Translator as google_translator
 from pyrogram import filters
 from aiohttp import ClientSession
 from EmikoRobot import BOT_USERNAME as bu
@@ -13,7 +12,7 @@ from EmikoRobot.utils.pluginhelper import admins_only, edit_or_reply
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
-translator = google_translator()
+
 
 
 async def lunaQuery(query: str, user_id: int):
