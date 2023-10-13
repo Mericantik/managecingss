@@ -31,14 +31,6 @@ class AntiSpam:
         Duration.CUSTOM = 15  # Custom duration, 15 seconds
         rates = Rate(5, Duration.SECOND * 2)
             
-            for request in range(6):
-    try:
-        limiter.try_acquire(request)
-    except BucketFullException as err:
-        print(err)
-        print(err.meta_info)
-        bucket=InMemoryBucket,
-        )
 
     def check_user(self, user):
         """
