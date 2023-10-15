@@ -1,7 +1,7 @@
 import html
 import re
 
-from telegram import ParseMode, ChatPermissions
+from telegram import ParseMode, ChatPermissions, Update
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
@@ -69,11 +69,13 @@ def blacklist(update, context):
 
 @user_admin
 @typing_action
-def add_blacklist(update, context):
+def add_blacklist(update: Update, context):
     msg = update.effective_message
     chat = update.effective_chat
     user = update.effective_user
     words = msg.text.split(None, 1)
+    if words is None:
+        words = update.message.text
 
     conn = connected(context.bot, update, chat, user.id)
     if conn:
