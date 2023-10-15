@@ -85,3 +85,4 @@ git+https://github.com/python-telegram-bot/ptbcontrib.git
 dnspython==2.4.1
 httpx==0.24.1
 httpcore==0.17.3
+pyyaml
